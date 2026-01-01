@@ -2,6 +2,27 @@ GET http://localhost:8000/products/ HTTP/1.1
 
 ###
 
+GET http://localhost:8000/products/2/ HTTP/1.1
+
+###
+
+PUT http://localhost:8000/products/2/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MzA2NjQ3LCJpYXQiOjE3NjczMDYzNDcsImp0aSI6Ijc2NzQ3ZDQxZjVhZDRhOTk5OTM2ZGY5ODc5NWU5ZWM5IiwidXNlcl9pZCI6IjEifQ.9X9ifvOW9hAmGWw4QayY2RGvlVtHcvI6T071SUsBytA
+
+{
+    "name": "Television set",
+    "description": "Such an Amamazing",
+    "price": "12000.99",
+    "stock": 500
+}
+
+###
+
+DELETE  http://localhost:8000/products/2/ HTTP/1.1
+
+###
+
 POST http://localhost:8000/products/ HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MTg1MTEyLCJpYXQiOjE3NjcxODQ4MTIsImp0aSI6IjU4NzZhNzI5M2QxYjRjMmM4Y2VhNjVkZDU5YWZhYTlmIiwidXNlcl9pZCI6IjEifQ.xIkYVYi_SUSpu1aiUam3WO4UhWSzrDqNC6xnXOk3ckA
@@ -27,4 +48,23 @@ Content-Type: application/json
 
 GET http://localhost:8000/user-orders/ HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MTg1MTEyLCJpYXQiOjE3NjcxODQ4MTIsImp0aSI6IjU4NzZhNzI5M2QxYjRjMmM4Y2VhNjVkZDU5YWZhYTlmIiwidXNlcl9pZCI6IjEifQ.xIkYVYi_SUSpu1aiUam3WO4UhWSzrDqNC6xnXOk3ckA
+
+###
+
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "test"
+}
+
+###
+
+POST http://localhost:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NzM5MTMwMywiaWF0IjoxNzY3MzA0OTAzLCJqdGkiOiJkZjI1ODFhNWY0ZTA0ZWYxYjQ3ZGE3ZjJiNjMwNjM1MSIsInVzZXJfaWQiOiIxIn0.Rv4WiLSTMXjcm-vVudj-1zVaqE-2GeBxW-8YQrA_kaQ"
+}
 
