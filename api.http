@@ -76,4 +76,49 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiY
 ###
 
 GET http://localhost:8000/orders/1a47deda-1727-4c14-af91-1a68357083a8 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MzcwMzA3LCJpYXQiOjE3NjczNzAwMDcsImp0aSI6ImFhZWFlMjFmZDNlYjQ2YTBiMDE2NGY3NjljMWYwZWMyIiwidXNlcl9pZCI6IjIifQ.mYaatgkOFUuhfPQ-1tiSSZJSUQsFAowN6bV8coe9tjw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3Mzk2MzUwLCJpYXQiOjE3NjczOTYwNTAsImp0aSI6IjUzNTUwZTg3ODE3ZDRhMGI5NWQwZDgxM2ZkNDhhZTAxIiwidXNlcl9pZCI6IjEifQ.M8vNCxo4LHZRVtFe8iVO3MetaFhs3UtkacAc3XItlyQ
+
+### 
+
+POST http://localhost:8000/orders/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3MzkzODQ0LCJpYXQiOjE3NjczOTM1NDQsImp0aSI6ImM0NTNlMWZkYzYxNTQ3MjI5YTJhZTliZWNjMmYwYWM5IiwidXNlcl9pZCI6IjEifQ.DrVBo65ifP_Qwm86LUyElDjcIlzSicMT5pdYw852LW8
+
+{
+	"status": "Pending",
+	"items": [
+		{
+				"product": 2,
+				"quantity": 2
+		},
+		{
+				"product": 3,
+				"quantity": 1
+		}
+	]	
+}
+
+###
+
+PUT http://localhost:8000/orders/1a47deda-1727-4c14-af91-1a68357083a8/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3Mzk2MDE1LCJpYXQiOjE3NjczOTU3MTUsImp0aSI6ImJhYzY3OGFlYzhlOTQyMGI5MmZhZTc1ZTU1ZDY5ZDI4IiwidXNlcl9pZCI6IjEifQ.ZHqZzTT0lpUOYrHSRq-PKwD8UlrDsyV9SbN5CPcnjd4
+
+{
+	"status": "Confirmed",
+	"items": [
+		{
+				"product": 2,
+				"quantity": 3
+		},
+		{
+				"product": 3,
+				"quantity": 1
+		}
+	]	
+}
+
+###
+
+DELETE  http://localhost:8000/orders/1a47deda-1727-4c14-af91-1a68357083a8/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY3Mzk2MDE1LCJpYXQiOjE3NjczOTU3MTUsImp0aSI6ImJhYzY3OGFlYzhlOTQyMGI5MmZhZTc1ZTU1ZDY5ZDI4IiwidXNlcl9pZCI6IjEifQ.ZHqZzTT0lpUOYrHSRq-PKwD8UlrDsyV9SbN5CPcnjd4
